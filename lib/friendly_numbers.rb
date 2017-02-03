@@ -8,6 +8,7 @@ module FriendlyNumbers
   # Options:
   # precision:: number of decimal places
   # unit:: symbol to prefix value
+  # separator:: symbol to separate thousands
   def number_to_currency(value, options = {})
     NumberToCurrency.convert(value, options)
   end
