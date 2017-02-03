@@ -2,7 +2,7 @@ module FriendlyNumbers
   module NumberToCurrency
     extend self
 
-    def convert(value, options)
+    def convert(value, options) # :nodoc:
       options = {
         precision: 2,
         unit: "$"
