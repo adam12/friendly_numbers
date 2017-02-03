@@ -9,19 +9,15 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Adam Daniels"]
   spec.email         = ["adam@mediadrive.ca"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-  spec.license       = "MIT"
+  spec.summary       = %q{Friendly number helpers for your non-Rails/Padrino apps.}
+  spec.description   = <<-EOM
+  Friendly number helpers without the mess. Working on a Roda or Sinatra application
+  and want to format a number into a currency or friendly file size? Got you covered.
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against " \
-      "public gem pushes."
-  end
+  Rails-like helpers for number_to_currency and number_to_human_size
+  EOM
+  spec.homepage      = "https://github.com/adam12/friendly_numbers"
+  spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
