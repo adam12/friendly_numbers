@@ -2,11 +2,13 @@ module FriendlyNumbers
   module NumberToHumanSize
     extend self
 
+    DEFAULTS = {
+      precision: 3,
+      scales: %w(Bytes KB MB GB TB PB EB ZB YB)
+    }
+
     def convert(bytes, options) # :nodoc:
-      options = {
-        precision: 3,
-        scales: %w(Bytes KB MB GB TB PB)
-      }.merge(options)
+      options = DEFAULTS.merge(options)
 
       value, scale = calculate_smallest_value_with_scale(bytes)
       precision = zero_precision_for_zero_remainder(value, options[:precision])
