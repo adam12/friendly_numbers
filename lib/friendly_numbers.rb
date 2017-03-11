@@ -1,6 +1,7 @@
 require "friendly_numbers/version"
 require "friendly_numbers/number_to_currency"
 require "friendly_numbers/number_to_human_size"
+require "friendly_numbers/number_to_percentage"
 
 module FriendlyNumbers
   # Convert a Number to a currency-formatted String
@@ -23,6 +24,15 @@ module FriendlyNumbers
     NumberToHumanSize.convert(bytes, options)
   end
   module_function :number_to_human_size
+
+  # Convert a Number to a percentage
+  #
+  # Options:
+  # precision:: number of decimal places
+  def number_to_percentage(value, options = {})
+    NumberToPercentage.convert(value, options)
+  end
+  module_function :number_to_percentage
 end
 
 Friendly = FriendlyNumbers
