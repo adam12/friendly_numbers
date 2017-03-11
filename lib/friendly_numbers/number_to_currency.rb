@@ -1,12 +1,12 @@
 module FriendlyNumbers
   module NumberToCurrency
-    extend self
-
     DEFAULTS = {
       precision: 2,
       unit: "$",
       separator: ","
     }
+
+    module_function
 
     def convert(value, options) # :nodoc:
       options = DEFAULTS.merge(options)

@@ -1,11 +1,11 @@
 module FriendlyNumbers
   module NumberToHumanSize
-    extend self
-
     DEFAULTS = {
       precision: 3,
       scales: %w(Bytes KB MB GB TB PB EB ZB YB)
     }
+
+    module_function
 
     def convert(bytes, options) # :nodoc:
       options = DEFAULTS.merge(options)
