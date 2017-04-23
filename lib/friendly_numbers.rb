@@ -2,6 +2,7 @@ require "friendly_numbers/version"
 require "friendly_numbers/number_to_currency"
 require "friendly_numbers/number_to_human_size"
 require "friendly_numbers/number_to_percentage"
+require "friendly_numbers/seconds_to_time"
 
 module FriendlyNumbers
   module_function
@@ -31,6 +32,15 @@ module FriendlyNumbers
   # precision:: number of decimal places
   def number_to_percentage(value, options = {})
     NumberToPercentage.convert(value, options)
+  end
+
+  # Convert Seconds to an elapsed time
+  #
+  # Options:
+  # format:: a callable object that receives hours, minutes, seconds as
+  #          arguments
+  def seconds_to_time(seconds, options = {})
+    SecondsToTime.convert(seconds, options)
   end
 end
 
