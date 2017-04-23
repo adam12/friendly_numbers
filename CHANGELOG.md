@@ -1,4 +1,6 @@
 # master
+
+# 0.3.0 (2017-04-22)
 - Add seconds_to_time helper.
 
 # 0.2.0
