@@ -31,6 +31,10 @@ To format a value as a human file size:
 
     FriendlyNumbers.number_to_human_size 12345.67  # => "12.056 KB"
 
+To format time in seconds to an elapsed time:
+
+    FriendlyNumbers.seconds_to_time(65) # => "1m 5s"
+
 Also conveniently aliased under the `Friendly` namespace.
 
 ## Development
