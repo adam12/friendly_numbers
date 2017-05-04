@@ -16,6 +16,8 @@ module FriendlyNumbers
     def convert(seconds, options) # :nodoc:
       options = DEFAULTS.merge(options)
 
+      seconds = seconds.to_i
+
       minutes, seconds  = seconds.divmod(60)
       hours, minutes    = minutes.divmod(60)
 

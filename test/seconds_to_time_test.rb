@@ -18,4 +18,8 @@ class SecondsToTimeTest < Minitest::Test
       format("%<minutes>d:%02<seconds>d", { minutes: minutes, seconds: seconds })
     }})
   end
+
+  def test_float_values
+    assert_equal "59s", convert(59.03432, {})
+  end
 end

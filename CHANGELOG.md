@@ -1,4 +1,5 @@
 # master
+- Ignore rational when passed to seconds_to_time
 
 # 0.3.0 (2017-04-22)
 - Add seconds_to_time helper.
