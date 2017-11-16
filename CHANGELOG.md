@@ -1,4 +1,6 @@
 # master
+
+# 0.4.0 (2017-11-16)
 - Ignore rational when passed to seconds_to_time
 
 # 0.3.0 (2017-04-22)
