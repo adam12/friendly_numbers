@@ -15,7 +15,7 @@ class SecondsToTimeTest < Minitest::Test
 
   def test_custom_formatter
     assert_equal "1:02", convert(62, { format: ->(_hours, minutes, seconds) {
-      format("%<minutes>d:%02<seconds>d", { minutes: minutes, seconds: seconds })
+      Kernel.format("%<minutes>d:%02<seconds>d", { seconds: seconds, minutes: minutes })
     }})
   end
 
