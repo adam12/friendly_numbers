@@ -1,4 +1,6 @@
 # master
+- Fix handling of whole numbers in currency helper
+- Fix decimal precision in currency helper
 
 # 0.4.0 (2017-11-16)
 - Ignore rational when passed to seconds_to_time
