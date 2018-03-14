@@ -15,9 +15,11 @@ module FriendlyNumbers
 
       parted = partition(whole, options[:separator])
 
-      options[:unit] +
-        parted +
-        format("%.#{options[:precision]}f", part)[1..-1] # Strip leading 0
+      if options[:precision].nonzero?
+        decimal = sprintf("%.0#{options[:precision]}f", part.abs)[1..-1] # Strip leading 0
+      end
+
+      options[:unit] + parted + decimal.to_s
     end
 
     def partition(whole, separator)
