@@ -9,7 +9,7 @@ module FriendlyNumbers
     def convert(value, options) # :nodoc:
       options = DEFAULTS.merge(options)
 
-      format("%.#{options[:precision]}f\%", value * 100)
+      format("%.#{options[:precision]}f%%", value * 100)
     end
   end
 end
