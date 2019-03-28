@@ -1,4 +1,6 @@
 # master
+
+# 0.5.0 (2019-03-28)
 - Properly escape percent sign in percentage helper
 - Fix handling of whole numbers in currency helper
 - Fix decimal precision in currency helper
