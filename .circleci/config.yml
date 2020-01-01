@@ -40,6 +40,7 @@ jobs:
       - image: circleci/ruby:2.7
     steps:
       - checkout
+      - run: gem install bundler -v 1.13 --no-document
       - run: bundle install --path vendor/bundle
       - run:
           name: Run tests
