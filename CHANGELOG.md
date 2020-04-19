@@ -1,5 +1,8 @@
 # master
 
+- BREAKING: `number_to_currency` no longer rounds when truncating to precision
+- `number_to_currency` properly handles partitioning of larger negative numbers (#2)
+
 # 0.5.0 (2019-03-28)
 - Properly escape percent sign in percentage helper
 - Fix handling of whole numbers in currency helper

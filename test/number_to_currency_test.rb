@@ -17,7 +17,15 @@ class NumberToCurrencyTest < Minitest::Test
     assert_equal "$-10.00", Friendly.number_to_currency(-10.0)
   end
 
+  def test_floating_point_value
+    assert_equal "$11.23", Friendly.number_to_currency(11.23)
+  end
+
   def test_three_decimal_precision
-    assert_equal "$3.142", Friendly.number_to_currency(Math::PI, precision: 3)
+    assert_equal "$3.141", Friendly.number_to_currency(Math::PI, precision: 3)
+  end
+
+  def test_large_negatives
+    assert_equal "$-456,789.01", Friendly.number_to_currency(-456_789.01)
   end
 end

@@ -11,23 +11,16 @@ module FriendlyNumbers
     def convert(value, options) # :nodoc:
       options = DEFAULTS.merge(options)
 
-      whole, part = value.divmod(1)
+      value = value.truncate(options[:precision]).to_f.to_s + ("0" * options[:precision].to_i)
+      whole, part = value.split(".", 2)
 
-      parted = partition(whole, options[:separator])
+      parted = whole.reverse.gsub(/...(?!-)(?=.)/, '\&,').reverse
 
       if options[:precision].nonzero?
-        decimal = sprintf("%.0#{options[:precision]}f", part.abs)[1..-1] # Strip leading 0
+        options[:unit] + parted + "." + part[0, options[:precision]]
+      else
+        options[:unit] + parted
       end
-
-      options[:unit] + parted + decimal.to_s
-    end
-
-    def partition(whole, separator)
-      whole.to_s.chars.reverse
-        .each_slice(3)
-        .map(&:join)
-        .join(separator)
-        .reverse
     end
   end
 end
