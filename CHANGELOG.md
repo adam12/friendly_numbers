@@ -1,5 +1,6 @@
 # master
 
+# 0.6.0 (2020-05-14)
 - BREAKING: `number_to_currency` no longer rounds when truncating to precision
 - `number_to_currency` properly handles partitioning of larger negative numbers (#2)
 
